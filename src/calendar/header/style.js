@@ -11,21 +11,23 @@ export default function (theme = {}) {
       justifyContent: 'space-between',
       paddingLeft: 10,
       paddingRight: 10,
-      marginTop: 6,
+      marginTop: 30,
+      marginBottom:5,
       alignItems: 'center'
     },
     headerContainer: {
-      flexDirection: 'row'
+      flexDirection: 'row',
+      flex:1
     },
     monthText: {
       fontSize: appStyle.textMonthFontSize,
       fontFamily: appStyle.textMonthFontFamily,
       fontWeight: appStyle.textMonthFontWeight,
       color: appStyle.monthTextColor,
-      margin: 10
+      // margin: 10
     },
     arrow: {
-      padding: 10,
+      padding:10,
       ...appStyle.arrowStyle
     },
     arrowImage: {
