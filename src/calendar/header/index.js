@@ -115,7 +115,7 @@ class CalendarHeader extends Component {
 
       return (
         <Text allowFontScaling={false} key={idx} style={dayStyle} numberOfLines={1} accessibilityLabel={''}>
-          {day}
+          {day && day.substring(0,2) || day}
         </Text>
       );
     });
@@ -161,7 +161,7 @@ class CalendarHeader extends Component {
         onPress={!shouldDisable ? onPress : undefined}
         disabled={shouldDisable}
         style={this.style.arrow}
-        hitSlop={{left: 20, right: 20, top: 20, bottom: 20}}
+        hitSlop={{left: 10, right: 10, top: 20, bottom: 20}}
         testID={testId}
       >
         {renderArrow ? (
@@ -218,11 +218,11 @@ class CalendarHeader extends Component {
         importantForAccessibility={this.props.importantForAccessibility} // Android
       >
         <View style={this.style.header}>
-          {this.renderArrow('left')}
           <View style={this.style.headerContainer}>
             {this.renderHeader()}
             {this.renderIndicator()}
           </View>
+          {this.renderArrow('left')}
           {this.renderArrow('right')}
         </View>
         {this.renderDayNames()}
